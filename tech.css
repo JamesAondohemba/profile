@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    padding: 0 20px;
+    text-align: justify;
+}
+
+
+div.bts, div.program, div.testimony, div.gratitude {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+div.bts img, div.program img, div.testimony img, div.gratitude img {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 8px;
+}
+
+.bu {
+    bottom: 20px;
+    width: 100%; 
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bu button {
+    padding: 10px 20px;
+    background-color: rgb(28, 153, 69);
+    color: rgb(248, 248, 250);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.bu button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.bu button a:hover {
+    text-decoration: underline;
+}
