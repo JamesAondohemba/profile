@@ -1,106 +1,96 @@
-
-body {
-    background-color: blue;
-    font-family: Arial, sans-serif;
-    color: white;
+*, *::after, *::before{
+box-sizing: border-box;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-.profile{
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-    margin-top: 60px;
+body{
+    background-color: rgb(16, 45, 65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
-
-img{
-    width: 450px;
-    height: 500px;
-    border-style: solid;
-    border-color: rgb(68, 143, 228);
-    border-radius: 90%;
-    border-width:10px;
+.clock{
+    width: 300px;
+    height: 300px;
+    background-color: rgba(92, 199, 232, 0.8);
+    border: 4px solid rgb(70, 73, 74);
+    border-radius: 50%;
+    position: relative;
     
 }
 
-#name{
-    text-align:justify;
-    margin-left: auto;
-    margin-right:auto;
-    width: 37%;
-    font-size: 30px;
-    color: white;
-
+.clock .number{
+    transform: rotate(calc(30deg * var(--n)));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
-.soft{
-    color: rgb(235, 216, 216);
-    font-style: italic;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-left: auto;
-    margin-right:auto;
-    width: 24%;
-    font-size:24px;
-
-}
-
-
-.box {
+.number b{
+    transform: rotate(calc(-30deg * var(--n)));
     display: inline-block;
-    width: 270px; 
-    height: 250px; 
-    background-color: white; 
-    color: black; 
-    margin-right: 10px;
-    margin-left: 40px;
-    padding: 15px;
-    box-sizing: border-box;
-    vertical-align: top;
-    border-radius: 10px;
 }
 
-h2 {
-    margin: 0 0 10px 0; 
-    color: darkblue; 
-    font-size: 1.5em;
-    text-align: center; 
+.clock .number1{--rotation:30deg;}
+.clock .number2{--rotation:60deg;}
+.clock .number3{--rotation:90deg;}
+.clock .number4{--rotation:120deg;}
+.clock .number5{--rotation:150deg;}
+.clock .number6{--rotation:180deg;}
+.clock .number7{--rotation:210deg;}
+.clock .number8{--rotation:240deg;}
+.clock .number9{--rotation:270deg;}
+.clock .number10{--rotation:300deg;}
+.clock .number11{--rotation:330deg;}
+
+
+.clock .hand{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 10;
+    background-color:white;
+    transform-origin: bottom;
+    transform: translatex(-50%) rotate(calc(var(--rotation)*1deg));
 }
 
-p, ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none; 
+.clock::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
 }
 
-ul li {
-    margin-bottom: 5px;
+.clock .hand.second{
+width: 3px;
+height: 45%;
+background-color: rgb(192, 2, 2);
 }
 
-
-.button-container {
-    bottom: 20px;
-    width: 100%; 
-    text-align: center;
-    margin-bottom: 30px;
+.clock .hand.minute{
+    width: 7px;
+    height: 40%;
+    background-color: white;
+      
 }
 
-.button-container button {
-    padding: 10px 20px;
-    background-color: rgb(28, 153, 69);
-    color: rgb(248, 248, 250);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-}
+.clock .hand.hour{
+width: 10px;
+height: 35%;
+background-color:  rgb(4, 28, 16);
 
-.button-container button a {
-    color: white;
-    text-decoration: none;
-    display: block;
-}
-
-.button-container button a:hover {
-    text-decoration: underline;
 }
